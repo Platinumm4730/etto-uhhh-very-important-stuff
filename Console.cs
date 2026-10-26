@@ -1,1 +1,1 @@
-Console.WriteLine("12 * 10);
+// ignore this
