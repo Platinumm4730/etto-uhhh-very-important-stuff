@@ -11,14 +11,14 @@ switch (choice)
         Console.WriteLine("You selected Addition");
             Console.WriteLine("How many numbers do you want to add?");
 
-            int NumCount = Convert.ToInt32(Console.ReadLine());
-            int sum = 0; // this is a running total that will be used to add the numbers together.
+            float NumCount = Convert.ToSingle(Console.ReadLine());
+            float sum = 0; // this is a running total that will be used to add the numbers together.
 
             for (int i = 0; i < NumCount; i++) // for loop. The first part sets the starting point (i) to zero. The second part sets the condition for the loop to break once greater than "numcount", the last part is the same as i+= 1.
             // this approach is not at all optimal, don't get me wrong. i just needed an excuse and application to test out doing for loops.
         {
             Console.WriteLine("Please enter a number to add: ");
-            int CurrentNum = Convert.ToInt32(Console.ReadLine()); 
+            float CurrentNum = Convert.ToSingle(Console.ReadLine()); 
             sum += CurrentNum; // adds the current number to a running total.
 
             if (CurrentNum > 2147483000) // the 32 bit integer limit. This will prevent errors being thrown in the case that the number is too large. there is definitely a prettier way to do this.
@@ -35,8 +35,8 @@ switch (choice)
     {
         Console.WriteLine("You selected Subtraction");
         Console.WriteLine("What is your first number?");
-        int StartingNum = Convert.ToInt32(Console.ReadLine()); // I think I'll have the user start with an initial number here, then make it continue to subtract entered numbers until they stop.
-        int SubtractionNum  = 1;
+        float StartingNum = Convert.ToSingle(Console.ReadLine()); // I think I'll have the user start with an initial number here, then make it continue to subtract entered numbers until they stop.
+        float SubtractionNum  = 1;
         // this is the variable for the subtraction storage number. I need to put it here because otherwise it wont work in the do while loop because im an idiot  
 
 
@@ -44,7 +44,7 @@ switch (choice)
         do // my first attempt at a do while loop. Theoretically this should continue to ask the user to enter numbers to subtract until they enter a specific key.
         {
             Console.WriteLine("Please enter a number to subtract: \n Alternatively, enter zero to stop subtracting numbers.");
-            SubtractionNum = Convert.ToInt32(Console.ReadLine());
+            SubtractionNum = Convert.ToSingle(Console.ReadLine());
             StartingNum -= SubtractionNum;
 
             if (SubtractionNum != 0)
@@ -54,6 +54,7 @@ switch (choice)
         }
         while (SubtractionNum != 0);
         break;  // I COULD HAVE DONE ALL THIS IN THE ADDITION PART FML
+                // literal waste of time. I can just use negative numbers in addition which is the EXACT SAME THING as subtraction. why am I such a fucking idiot
     }
     
     case 3:
